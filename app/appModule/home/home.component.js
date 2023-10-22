@@ -6,17 +6,17 @@ angular.module('ptoModule')
 
 			vm.getInputs = function(user) {
 				console.log('Entering Function in Home Controller');
-				//var getToken = homeService.tempLoggedIn(user);
-				//Then switch Path w/out POST
-				//$location.path('/ptoList');
-				homeService.getAuthorized(user)
-				.then(function(response){
-					console.log("Ready to change location");
-					$location.path('/ptoList')
-				})
-				.catch(function(error){
-					console.log(error);
-				});
+				var getToken = homeService.tempLoggedIn(user);
+				$location.path('/ptoList');
+				// **** When API is working in Home Service, Unhide Here ****
+				//homeService.getAuthorized(user)
+				//.then(function(response){
+				//	console.log("Ready to change location");
+				//	$location.path('/ptoList')
+				//})
+				//.catch(function(error){
+				//	console.log(error);
+				//});
 			}
 
 		},

@@ -5,12 +5,13 @@ angular.module('ptoModule')
     var apiString = 'https://www.readypayonline.com/CompanyAPI/identity/connect/token';
     var testingString = 'https://uatrpotest.proliant.com/CompanyAPI/indentiy/connect/token';
     var jsonBody = {};
-    const forHeader1 = user.input1;
-    const forHeader2 = user.input2;
 
+        //**** Currently Using tempLoggedIn instead of getAuthorized in Controller
         service.tempLoggedIn = function(user) {
             jsonBody.scope = 'company';
             jsonBody.grant_type = 'client_credentials';
+            const forHeader1 = user.input1;
+            const forHeader2 = user.input2;
             console.log(jsonBody);
             localStorage.setItem('testing', '0035711 testing local storage');
             console.log('Found in Home Local Storage: ', localStorage.getItem('testing'));
@@ -22,6 +23,8 @@ angular.module('ptoModule')
             console.log('Entering getLoggedIn');
             jsonBody.scope = "company";
             jsonBody.grant_type = "client_credentials";
+            const forHeader1 = user.input1;
+            const forHeader2 = user.input2;
             return $http({
                     method: 'POST',
                     url: testingString,
