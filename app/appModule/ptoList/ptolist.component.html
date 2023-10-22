@@ -1,0 +1,33 @@
+<h2>PTO Balances</h2>
+<div class = "tablepage">
+		<input type='button' name='submit' value='Get Balances' ng-click="vm.getBalances()"/>
+</div>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Company</th>
+			<th>PTO Balance</th>
+			<th>Sick Balance</th>
+			<th>Company2</th>
+			<th>PTO Balance2</th>
+			<th>Sick Balance2</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in vm.list | orderBy: 'Name' ">
+			<td ng-class="cssClass">{{item.Name}}</td>
+			<td ng-class="cssClass">{{item.Type == "npo"? "NPO" : "LLC"}}</td>
+			<td ng-class="cssClass">{{item.PtoBalance}}</td>
+			<td ng-class="cssClass">{{item.SickBalance}}</td>
+			<td ng-class="cssClass">{{item.Type == "both"? "NPO" : "NA"}}</td>
+			<td ng-class="cssClass">{{item.PtoBalance2}}</td>
+			<td ng-class="cssClass">{{item.SickBalance2}}</td>
+		</tr>
+	</tbody>
+</table>
+<div class ="bottomright">
+		<input type='submit' name='submit' value='Clear Data' ng-click="vm.destroyToken()"/>
+</div>
+<div class="extraspace">
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app='ptoModule'>
+<head>
+  <title>PTO Project</title>
+  <link rel="stylesheet" href="css/master.css" />
+ <!-- Angular and Routing Module and Cookies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.8.3/angular-resource.min.js"></script>
+  <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-cookies/1.8.3/angular-cookies.min.js"></script>
+  <!--  modules, services, filters, components -->
+  <script src="app/appModule/app.module.js"></script>
+  <script src="app/appModule/home/home.service.js"></script>
+  <script src="app/appModule/home/home.component.js"></script>
+  <script src="app/appModule/ptoList/ptolist.service.js"></script>
+  <script src="app/appModule/ptoList/ptolist.component.js"></script>
+  <script src="app/appModule/clear/clear.component.js"></script>
+  <link rel="icon"
+  		type="image/png"
+      	ng-href="images/check.png" />
+</head>
+<body>
+	<div id='main'>
+	  <ng-view>Testing</ng-view>
+	</div>
+</body>
+</html>
