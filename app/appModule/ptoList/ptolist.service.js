@@ -13,11 +13,18 @@ angular.module('ptoModule')
             return 'https://uatrpotest.proliant.com/CompanyAPI/Company/'.concat(compId, '/Employee/', empId, '/Accrual/SICKCO');
         }
 
+        service.getFakePtoBalance = function(empId, compId) {
+            return this.fakeJsonSick;
+        }
+
+        service.getFakeSickBalance = function(empId, compId) {
+            return this.fakeJsonPto;
+        }
+
         service.getPtoBalance = function(empId, compId) {
             //console.log('Entering getPtoBalance in PTO List Service');
             var proGetPathPtoString = service.getPtoBalanceString(empId, compId);
             //console.log('PTO Path: ', proGetPathPtoString);
-            // ***** Wait To Unhide *****
                 return $http({
                         method: 'GET',
                         url: proGetPathPtoString,
@@ -29,14 +36,12 @@ angular.module('ptoModule')
                     .then(function(data, status){
                         console.log(data);
                     });
-            //return this.fakeJsonPto;
             };
 
         service.getSickBalance = function(empId, compId) {
             //console.log("Entering getSickBalance in PTO List Service");
             var proGetPathSickString = service.getSickBalanceString(empId, compId);
             //console.log("Sick Path: ", proGetPathSickString);
-            // ***** Wait To Unhide *****
                 return $http({
                         method: 'GET',
                         url: proGetPathSickString,
@@ -48,7 +53,6 @@ angular.module('ptoModule')
                     .then(function(data, status){
                         console.log(data);
                     });
-            //return this.fakeJsonSick;
             };
 
     return service;

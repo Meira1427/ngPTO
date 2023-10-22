@@ -394,12 +394,13 @@ angular.module('ptoModule')
 				return vm.emplKeys;
 			}
 
+			// ***** When API is working, change in body to getPtoBalance(empId, compId)
 			var getPtoJsonFromProliant = function(empId, compId) {
 				//Note Here, check type returned. If you get back JSON, use
 				//JSON.parse. If you get back an object, just return it. It depends
 				//upon the API Server.
 				//console.log("Entering getPtoJasonFromProliant");
-				var answer = ptolistService.getPtoBalance(empId, compId);
+				var answer = ptolistService.getFakePtoBalance(empId, compId);
 				//console.log(answer);
 				if(answer != null) {
 					if(typeof answer == 'object') {
@@ -415,11 +416,12 @@ angular.module('ptoModule')
 			    return vm.fakePtoData1026;
 			}
 
+			// ***** When API is working, change in body to getSickBalance(empId, compId)
 			var getSickBalanceJsonFromProliant = function(empId, compId) {
 				//Note Here, check type returned. If you get back JSON, use
 				//JSON.parse. If you get back an object, just return it. It depends
 				//upon the API Server.
-				var answer = ptolistService.getSickBalance(empId, compId);
+				var answer = ptolistService.getFakeSickBalance(empId, compId);
 				if (answer != null) {
 					if(typeof answer == 'object') {
 						//console.log("Typeof Returned from API: ", typeof answer);
